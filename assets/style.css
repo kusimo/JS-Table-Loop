@@ -1,0 +1,80 @@
+/*
+ css credit
+ table css: https://www.bootdey.com/snippets/view/time-table
+*/
+body {
+    margin-top: 20px;
+
+}
+
+
+.table-bordered thead td,
+    .table-bordered thead th {
+        border-bottom-width: 2px;
+    }
+
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .table-bordered td,
+    .table-bordered th {
+        border: 1px solid #dee2e6;
+    }
+
+
+    .bg-orange.box-shadow {
+        box-shadow: 0px 5px 0px 0px #af4305
+    }
+
+    .bg-green.box-shadow {
+        box-shadow: 0px 5px 0px 0px #4ca520
+    }
+
+    .bg-yellow.box-shadow {
+        box-shadow: 0px 5px 0px 0px #dcbf02
+    }
+
+    .bg-pink.box-shadow {
+        box-shadow: 0px 5px 0px 0px #e82d8b
+    }
+
+
+    .bg-orange {
+        background-color: #e95601
+    }
+
+    .bg-green {
+        background-color: #5bbd2a
+    }
+
+    .bg-yellow {
+        background-color: #f0d001
+    }
+
+    .bg-pink {
+        background-color: #ff48a4
+    }
+
+    .table-bordered td,
+    .table-bordered th {
+        border: 1px solid #dee2e6;
+    }
+
+    .table td,
+    .table th {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .code {
+        background-color: #1e2122;
+        color: #fff;
+        margin: 1.5em auto;
+        overflow: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 20px;
+    }
