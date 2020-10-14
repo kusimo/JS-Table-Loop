@@ -4,94 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Loop through tables rows and columns with JavaScript</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css"
         integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
 
 </head>
 
 <body>
-    <!--credit:-->
-    <!-- table css: https://www.bootdey.com/snippets/view/time-table-->
-    <style>
-        body {
-            margin-top: 20px;
-
-        }
-
-
-        .table-bordered thead td,
-        .table-bordered thead th {
-            border-bottom-width: 2px;
-        }
-
-        .table thead th {
-            vertical-align: bottom;
-            border-bottom: 2px solid #dee2e6;
-        }
-
-        .table-bordered td,
-        .table-bordered th {
-            border: 1px solid #dee2e6;
-        }
-
-
-        .bg-orange.box-shadow {
-            box-shadow: 0px 5px 0px 0px #af4305
-        }
-
-        .bg-green.box-shadow {
-            box-shadow: 0px 5px 0px 0px #4ca520
-        }
-
-        .bg-yellow.box-shadow {
-            box-shadow: 0px 5px 0px 0px #dcbf02
-        }
-
-        .bg-pink.box-shadow {
-            box-shadow: 0px 5px 0px 0px #e82d8b
-        }
-
-
-        .bg-orange {
-            background-color: #e95601
-        }
-
-        .bg-green {
-            background-color: #5bbd2a
-        }
-
-        .bg-yellow {
-            background-color: #f0d001
-        }
-
-        .bg-pink {
-            background-color: #ff48a4
-        }
-
-        .table-bordered td,
-        .table-bordered th {
-            border: 1px solid #dee2e6;
-        }
-
-        .table td,
-        .table th {
-            padding: .75rem;
-            vertical-align: top;
-            border-top: 1px solid #dee2e6;
-        }
-
-        .code {
-            background-color: #1e2122;
-            color: #fff;
-            margin: 1.5em auto;
-            overflow: auto;
-            overflow-x: auto;
-            overflow-y: hidden;
-            padding: 20px;
-        }
-    </style>
-
     <div class="container">
         <div class="timetable-img text-center mb-4">
             Timestable
@@ -142,65 +62,7 @@
     </div>
 
     <!--script-->
-    <script>
-        (function () {
-            var table = document.getElementsByTagName("table")[0];
-            if (!table) return;
-
-            var days = [];
-            var subjects = [];
-            var times = [];
-            var myTimetable = {};
-            var b = 0;
-
-
-            for (var i = 0, row; row = table.rows[i]; i++) {
-                b + i;
-                //iterate through rows.
-                // Rows would be accessed using the "row" variable assigned in the for loop.
-
-                if (0 === i) {
-                    // Get the times.
-                    // I know the first row[0] contains the times, your case might be different.
-
-                    for (let j = 0, col; col = row.cells[j]; j++) {
-                        // Iterate through columns.
-                        // Column would be accessed using the "cols" variable in the for loop.
-                        if ("" !== col.textContent)
-                            times.push(col.textContent)
-                    }
-                }
-
-                if (i > 0) {
-                    // Get the subjects.
-                    // I don't want to include the times in my data again, so I skipped the first row.
-                    for (let j = 0, col; col = row.cells[j]; j++) {
-                        // I also don't want to include the days column, so check for it and skipped.
-                        if (!col.textContent.includes("DAY")) {
-                            subjects.push(col.textContent)
-                        }
-
-                    }
-                }
-                // Get the days.
-                if ("" !== row.cells[b].textContent)
-                    days.push(row.cells[b].textContent)
-
-            }
-
-            myTimetable.times = times;
-            myTimetable.days = days;
-            myTimetable.subjects = subjects;
-            console.log(myTimetable)
-            // Convert array of object into string json.
-            var jsonString = JSON.stringify(myTimetable);
-            // Save for later use.
-            localStorage.setItem('myTimetable', jsonString);
-            // Get your saved data from local storage.
-            document.getElementsByTagName("code")[0].innerHTML = localStorage.getItem('myTimetable');
-
-        }())
-    </script>
+    <script src="assets/loop.js"></script>
 </body>
 
 </html>
